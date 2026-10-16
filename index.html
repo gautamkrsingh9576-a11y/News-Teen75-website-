@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsTeen75 — Corporate Network, Leadership & Advertising Partnerships</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#FF173D',
+                            redDark: '#D90F30',
+                            redLight: '#FFF0F3',
+                            black: '#0A0A0C',
+                            charcoal: '#141418',
+                            slate: '#1F1F26'
+                        }
+                    },
+                    boxShadow: {
+                        'crimson': '0 10px 30px -5px rgba(255, 23, 61, 0.35)',
+                        'card': '0 20px 40px -15px rgba(10, 10, 12, 0.07)',
+                        'phone': '0 25px 60px -15px rgba(0, 0, 0, 0.45)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Brand Styling & Smooth Transitions */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #0A0A0C;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-brand {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .page-view {
+            display: none;
+            animation: fadeInPage 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .page-view.active {
+            display: block;
+        }
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Subtle Grid Background Pattern */
+        .bg-grid-dark {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+        .bg-grid-light {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(10, 10, 12, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(10, 10, 12, 0.04) 1px, transparent 1px);
+        }
+        /* Hide Scrollbar inside Interactive Phone App UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Nav Link Active Indicator */
+        .nav-btn.active {
+            color: #FF173D;
+            font-weight: 600;
+        }
+        .nav-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #FF173D;
+            border-radius: 9999px;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D2D35;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF173D;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand-red selection:text-white">
+
+    <!-- Top Corporate Announcement Bar -->
+    <div class="bg-brand-black text-gray-300 text-xs border-b border-white/10 py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-red text-white uppercase tracking-wider">Corporate Portal</span>
+                <span class="hidden sm:inline text-gray-400">Official Brand Identity, Executive Leadership & Advertising Network Hub</span>
+            </div>
+            <div class="flex items-center space-x-4 ml-auto">
+                <a href="mailto:newsteen75@gmail.com" class="hover:text-white transition flex items-center gap-1">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-red"></i>
+                    <span>newsteen75@gmail.com</span>
+                </a>
+                <span class="text-white/20">|</span>
+                <a href="tel:+918797961049" class="hover:text-white transition flex items-center gap-1">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-red"></i>
+                    <span>+91 87979 61049</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Main Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-brand-black/95 backdrop-blur-md border-b border-white/10 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo (Matches Uploaded Wordmark + Image Fallback) -->
+            <button onclick="navigateTo('home')" class="flex items-center gap-3 group focus:outline-none text-left" aria-label="NewsTeen75 Home">
+                <div class="flex items-center">
+                    <span class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight text-white">News</span><span class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight text-brand-red">Teen75</span>
+                </div>
+                <span class="hidden sm:inline-block text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-white/10 text-gray-300 border border-white/10 group-hover:border-brand-red/50 transition">
+                    Corporate
+                </span>
+            </button>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300" aria-label="Primary Navigation">
+                <button onclick="navigateTo('home')" data-page="home" class="nav-btn active relative py-1 hover:text-white transition">
+                    Home
+                </button>
+                <button onclick="navigateTo('about')" data-page="about" class="nav-btn relative py-1 hover:text-white transition">
+                    About &amp; Leadership
+                </button>
+                <button onclick="navigateTo('advertise')" data-page="advertise" class="nav-btn relative py-1 hover:text-white transition">
+                    Advertise
+                </button>
+                <button onclick="navigateTo('contact')" data-page="contact" class="nav-btn relative py-1 hover:text-white transition">
+                    Contact
+                </button>
+            </nav>
+
+            <!-- Right Desktop CTA Buttons -->
+            <div class="hidden md:flex items-center space-x-3">
+                <button onclick="openMediaKitModal()" class="px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/10 transition flex items-center gap-1.5">
+                    <i data-lucide="file-bar-chart-2" class="w-4 h-4 text-brand-red"></i>
+                    <span>Ad Deck</span>
+                </button>
+                <button onclick="navigateTo('advertise')" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-red hover:bg-brand-redDark text-white shadow-crimson transition flex items-center gap-1.5">
+                    <span>Partner With Us</span>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <div class="md:hidden flex items-center">
+                <button onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-white/10 text-white hover:bg-white/20 focus:outline-none" aria-label="Toggle Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenuDrawer" class="hidden md:hidden bg-brand-charcoal border-b border-white/10 px-4 pt-3 pb-6 space-y-2">
+            <button onclick="navigateTo('home'); toggleMobileMenu(false);" data-mobile-page="home" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold bg-white/10 text-white flex items-center justify-between">
+                <span>Home</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-red"></i>
+            </button>
+            <button onclick="navigateTo('about'); toggleMobileMenu(false);" data-mobile-page="about" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5 flex items-center justify-between">
+                <span>About &amp; Leadership</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+            </button>
+            <button onclick="navigateTo('advertise'); toggleMobileMenu(false);" data-mobile-page="advertise" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5 flex items-center justify-between">
+                <span>Advertise</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+            </button>
+            <button onclick="navigateTo('contact'); toggleMobileMenu(false);" data-mobile-page="contact" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5 flex items-center justify-between">
+                <span>Contact</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+            </button>
+            <div class="pt-3 grid grid-cols-2 gap-2 border-t border-white/10">
+                <button onclick="openMediaKitModal(); toggleMobileMenu(false);" class="w-full py-2.5 px-3 rounded-xl text-xs font-semibold bg-white/10 text-white text-center">
+                    View Ad Deck
+                </button>
+                <button onclick="navigateTo('advertise'); toggleMobileMenu(false);" class="w-full py-2.5 px-3 rounded-xl text-xs font-bold bg-brand-red text-white text-center">
+                    Partner Inquiry
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Multi-Page Content Container -->
+    <main class="flex-grow">
+
+        <!-- ========================================== -->
+        <!-- PAGE 1: HOME                               -->
+        <!-- ========================================== -->
+        <section id="page-home" class="page-view active">
+            <!-- Hero Section -->
+            <div class="relative bg-brand-black text-white bg-grid-dark overflow-hidden border-b border-white/10">
+                <!-- Ambient Crimson Glow -->
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                        
+                        <!-- Left Column: Brand Value Proposition & CTAs -->
+                        <div class="lg:col-span-7 space-y-6">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-xs font-semibold text-gray-200">
+                                <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+                                <span>India’s Next-Gen Mobile News &amp; Media Network</span>
+                            </div>
+
+                            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08]">
+                                Built for the Speed of <span class="text-brand-red">Youth.</span> Engineered for <span class="underline decoration-brand-red decoration-4 underline-offset-8">Brand Impact.</span>
+                            </h1>
+
+                            <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                                <strong class="text-white font-semibold">News Teen75</strong> is a premier digital media network delivering high-velocity, bite-sized visual journalism across National Affairs, Business, and Technology—while empowering ambitious brands with high-attention native advertising partnerships.
+                            </p>
+
+                            <!-- Primary Navigation CTAs -->
+                            <div class="pt-2 flex flex-wrap items-center gap-4">
+                                <button onclick="navigateTo('advertise')" class="px-7 py-4 rounded-2xl bg-brand-red hover:bg-brand-redDark text-white font-display font-bold text-sm shadow-crimson transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                                    <span>Explore Advertising Partnerships</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="navigateTo('about')" class="px-7 py-4 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-display font-semibold text-sm border border-white/15 transition flex items-center gap-2">
+                                    <i data-lucide="users" class="w-4 h-4 text-brand-red"></i>
+                                    <span>Meet Our Leadership</span>
+                                </button>
+                            </div>
+
+                            <!-- Key Network Metrics Bar -->
+                            <div class="pt-8 grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/10 max-w-xl">
+                                <div>
+                                    <div class="font-display font-extrabold text-2xl sm:text-3xl text-white">4<span class="text-brand-red">+</span></div>
+                                    <div class="text-xs text-gray-400 mt-0.5">Core Content Verticals</div>
+                                </div>
+                                <div>
+                                    <div class="font-display font-extrabold text-2xl sm:text-3xl text-white">100<span class="text-brand-red">%</span></div>
+                                    <div class="text-xs text-gray-400 mt-0.5">Mobile-Native Experience</div>
+                                </div>
+                                <div>
+                                    <div class="font-display font-extrabold text-2xl sm:text-3xl text-white">Gen-Z</div>
+                                    <div class="text-xs text-gray-400 mt-0.5">&amp; Millennial Core Reach</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Clean Smartphone App Frame Showcase -->
+                        <div class="lg:col-span-5 flex justify-center">
+                            <div class="relative w-full max-w-[320px] sm:max-w-[340px]">
+                                <!-- Floating Badge Left -->
+                                <div class="hidden sm:flex absolute -left-12 top-14 z-20 bg-brand-charcoal/95 backdrop-blur-md border border-white/15 px-3.5 py-2.5 rounded-2xl shadow-xl items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-xl bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red">
+                                        <i data-lucide="zap" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-[11px] font-bold text-white">High-Velocity Feed</div>
+                                        <div class="text-[10px] text-gray-400">For You • India • Business • Tech</div>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Badge Right -->
+                                <div class="hidden sm:flex absolute -right-10 bottom-20 z-20 bg-white text-brand-black border border-gray-200 px-3.5 py-2.5 rounded-2xl shadow-xl items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-xl bg-brand-red text-white flex items-center justify-center">
+                                        <i data-lucide="megaphone" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-[11px] font-extrabold text-brand-black">Brand-Safe Ad Slots</div>
+                                        <div class="text-[10px] text-gray-500">Native Card &amp; Category Sponsorships</div>
+                                    </div>
+                                </div>
+
+                                <!-- Clean Smartphone Hardware Frame -->
+                                <div class="bg-[#18181D] p-3 rounded-[2.85rem] border-4 border-[#2D2D37] shadow-phone relative overflow-hidden">
+                                    <!-- Top Speaker Notch -->
+                                    <div class="w-24 h-4 bg-brand-black mx-auto rounded-b-xl mb-1.5 flex items-center justify-center">
+                                        <div class="w-10 h-1 rounded-full bg-gray-700"></div>
+                                    </div>
+
+                                    <!-- App Screen Container -->
+                                    <div class="bg-white rounded-[2.15rem] overflow-hidden border border-gray-200 relative aspect-[9/19.3]">
+                                        <img 
+                                            src="IMG_20261017_001929.jpg" 
+                                            alt="NewsTeen75 Mobile App Interface" 
+                                            class="w-full h-full object-cover object-top"
+                                            onerror="if(this.src.indexOf('IMG_20261017_001929_2.jpg') === -1){ this.src='IMG_20261017_001929_2.jpg'; } else { this.src='https://placehold.co/360x770/FFFFFF/0A0A0C?text=NewsTeen75+App'; }"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Brand Identity Showcase Banner -->
+            <div class="bg-white border-b border-gray-200 py-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="bg-brand-black rounded-3xl p-6 sm:p-10 text-white grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-card">
+                        <div class="lg:col-span-5 flex flex-col items-center justify-center bg-black rounded-2xl p-6 border border-white/10">
+                            <img 
+                                src="ChatGPT Image Sep 30, 2026, 12_27_17 AM.png" 
+                                alt="NewsTeen75 Official Wordmark" 
+                                class="max-h-24 w-auto object-contain"
+                                onerror="this.style.display='none'; document.getElementById('logoBannerFallback').classList.remove('hidden');"
+                            />
+                            <div id="logoBannerFallback" class="hidden py-4 text-center">
+                                <span class="font-display font-extrabold text-4xl text-white">News</span><span class="font-display font-extrabold text-4xl text-brand-red">Teen75</span>
+                            </div>
+                            <span class="text-[11px] uppercase tracking-widest text-gray-500 mt-3">Official Network Identity</span>
+                        </div>
+                        <div class="lg:col-span-7 space-y-3">
+                            <div class="text-xs font-bold uppercase tracking-widest text-brand-red">Corporate Identity & Vision</div>
+                            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white">A Unified Brand Built on Clarity, Speed, and Trust</h2>
+                            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                                The <strong class="text-white">NewsTeen75</strong> mark represents the intersection of authoritative journalism (<span class="text-white font-semibold">News</span>) and energetic, youth-driven digital momentum (<span class="text-brand-red font-semibold">Teen75</span>). Rather than overwhelming readers with legacy clutter, our platform structures information into scannable, high-retention visual cards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Network Highlights Section -->
+            <div class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider mb-3">Core Network Pillars</span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-black tracking-tight">
+                        Why Audience & Brands Choose News Teen75
+                    </h2>
+                    <p class="text-gray-600 mt-3 text-base sm:text-lg">
+                        Designed from the ground up as a modern mobile platform, News Teen75 bridges the gap between rapid national updates and premium brand storytelling.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Pillar 1 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-card hover:border-brand-red/40 transition group">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-redLight text-brand-red flex items-center justify-center mb-5 group-hover:bg-brand-red group-hover:text-white transition">
+                            <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-brand-black mb-2">Mobile-First Architecture</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Engineered specifically for vertical smartphone ergonomics with instant tab switching across <em>For You</em>, <em>India</em>, <em>Business</em>, and <em>Tech</em>.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-card hover:border-brand-red/40 transition group">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-redLight text-brand-red flex items-center justify-center mb-5 group-hover:bg-brand-red group-hover:text-white transition">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-brand-black mb-2">Visual Card Formats</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Every update is presented in high-contrast hero carousels and dual-grid story cards that maximize reader retention and ad viewability.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-card hover:border-brand-red/40 transition group">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-redLight text-brand-red flex items-center justify-center mb-5 group-hover:bg-brand-red group-hover:text-white transition">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-brand-black mb-2">Brand-Safe Environment</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Strict editorial curation ensures advertising partners appear alongside verified national, business, educational, and technology coverage.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-card hover:border-brand-red/40 transition group">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-redLight text-brand-red flex items-center justify-center mb-5 group-hover:bg-brand-red group-hover:text-white transition">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-brand-black mb-2">Youth & Decision-Makers</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Captures India’s most coveted demographic—ambitious students, young professionals, tech enthusiasts, and business followers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Corporate Routing Cards (Explore the Network) -->
+            <div class="bg-brand-black text-white py-16 sm:py-20 border-t border-white/10">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-red">Corporate Directory</span>
+                            <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-1">Explore the News Teen75 Hub</h2>
+                        </div>
+                        <p class="text-gray-400 text-sm max-w-md">
+                            Navigate directly to our leadership profiles, advertising partnership packages, or executive communication channels.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Card 1: About & Leadership -->
+                        <div onclick="navigateTo('about')" class="cursor-pointer bg-brand-charcoal hover:bg-brand-slate border border-white/10 hover:border-brand-red/50 rounded-2xl p-7 transition group flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-6">
+                                    <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 text-gray-200">01 / Leadership</span>
+                                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-red group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+                                </div>
+                                <h3 class="font-display font-bold text-2xl mb-2 text-white">About & Leadership</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                    Learn the founding story behind News Teen75 and meet our executive leadership—<strong class="text-white">Gautam Singh</strong> (Founder & CEO) and <strong class="text-white">Aditya Gupta</strong> (Co-Founder).
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-red uppercase tracking-wider">
+                                <span>View Executive Profiles</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+
+                        <!-- Card 2: Advertise -->
+                        <div onclick="navigateTo('advertise')" class="cursor-pointer bg-gradient-to-br from-brand-red to-brand-redDark rounded-2xl p-7 transition transform hover:-translate-y-1 shadow-crimson flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-6">
+                                    <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-black/25 text-white">02 / Brand Solutions</span>
+                                    <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <h3 class="font-display font-bold text-2xl mb-2 text-white">Advertise With Us</h3>
+                                <p class="text-white/90 text-sm leading-relaxed mb-6">
+                                    Discover native in-feed placements, category takeovers, push spotlights, and custom brand integrations. Submit your campaign inquiry directly.
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-white uppercase tracking-wider bg-black/20 px-3.5 py-2 rounded-xl w-max">
+                                <span>Open Advertising Deck & Form</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+
+                        <!-- Card 3: Contact -->
+                        <div onclick="navigateTo('contact')" class="cursor-pointer bg-brand-charcoal hover:bg-brand-slate border border-white/10 hover:border-brand-red/50 rounded-2xl p-7 transition group flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-6">
+                                    <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 text-gray-200">03 / Direct Lines</span>
+                                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-red group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+                                </div>
+                                <h3 class="font-display font-bold text-2xl mb-2 text-white">Contact Corporate Desk</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                    Connect directly via email (<span class="text-gray-200">newsteen75@gmail.com</span>) or phone (<span class="text-gray-200">+91 87979 61049 / +91 93045 75897</span>) for press, alliances, or inquiries.
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-red uppercase tracking-wider">
+                                <span>Get In Touch</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PAGE 2: ABOUT & LEADERSHIP                 -->
+        <!-- ========================================== -->
+        <section id="page-about" class="page-view">
+            <!-- Subpage Header -->
+            <div class="bg-brand-black text-white py-16 sm:py-20 border-b border-white/10 bg-grid-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-3xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/20 border border-brand-red/40 text-brand-red text-xs font-bold uppercase tracking-wider mb-4">
+                            About & Leadership
+                        </div>
+                        <h1 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight leading-tight">
+                            Shaping the Future of Youth-Focused Digital Media in India.
+                        </h1>
+                        <p class="text-gray-300 text-base sm:text-lg mt-4 leading-relaxed">
+                            Founded with a bold vision to cut through digital noise, News Teen75 combines clean product design with rapid editorial curation to keep India’s next generation informed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Background Story & Corporate Mission -->
+            <div class="py-16 sm:py-20 bg-white border-b border-gray-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-5">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-red">Our Story</span>
+                            <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-brand-black leading-tight">
+                                Born for the Smartphone Generation. Built for Credibility.
+                            </h2>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                Traditional news portals were built for desktop browsers—cluttered with pop-ups, slow-loading pages, and fragmented navigation. We recognized that today’s readers consume news on the move and demand both speed and visual clarity.
+                            </p>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                <strong class="text-brand-black">News Teen75</strong> was established to redefine how national events, business shifts, technology breakthroughs, and youth-relevant stories are experienced. By organizing our mobile ecosystem into intuitive verticals (<em>For You, India, Business, Tech</em>), we empower readers to stay informed in seconds while giving brand partners a high-attention canvas.
+                            </p>
+                            <div class="pt-3 grid grid-cols-2 gap-4">
+                                <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                                    <div class="font-display font-bold text-brand-black text-base mb-1 flex items-center gap-2">
+                                        <i data-lucide="target" class="w-4 h-4 text-brand-red"></i>
+                                        <span>Our Mission</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 leading-relaxed">
+                                        To deliver verified, high-velocity news in a zero-clutter interface tailored for India’s young citizens and professionals.
+                                    </p>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                                    <div class="font-display font-bold text-brand-black text-base mb-1 flex items-center gap-2">
+                                        <i data-lucide="compass" class="w-4 h-4 text-brand-red"></i>
+                                        <span>Our Vision</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 leading-relaxed">
+                                        To become India’s most trusted mobile news network and the premier digital storytelling partner for modern brands.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Brand DNA Matrix -->
+                        <div class="lg:col-span-6">
+                            <div class="bg-brand-black text-white rounded-3xl p-8 sm:p-10 shadow-card border border-white/10 space-y-6">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-5">
+                                    <div>
+                                        <span class="text-xs font-bold uppercase tracking-widest text-brand-red">Network DNA</span>
+                                        <h3 class="font-display font-bold text-xl text-white mt-1">The 4 Pillars of News Teen75</h3>
+                                    </div>
+                                    <div class="font-display font-extrabold text-xl">
+                                        <span>News</span><span class="text-brand-red">Teen75</span>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                                        <span class="w-8 h-8 rounded-lg bg-brand-red text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">01</span>
+                                        <div>
+                                            <h4 class="font-bold text-white text-sm">Reader-First UI & Ergonomics</h4>
+                                            <p class="text-xs text-gray-400 mt-1">Zero intrusive pop-ups. Clean typography, dark/light comfort modes, and instant category pills.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                                        <span class="w-8 h-8 rounded-lg bg-brand-red text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">02</span>
+                                        <div>
+                                            <h4 class="font-bold text-white text-sm">Balanced National & Youth Coverage</h4>
+                                            <p class="text-xs text-gray-400 mt-1">From national defense and policy updates to university innovation, startups, and consumer tech.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                                        <span class="w-8 h-8 rounded-lg bg-brand-red text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">03</span>
+                                        <div>
+                                            <h4 class="font-bold text-white text-sm">High-Impact Native Monetization</h4>
+                                            <p class="text-xs text-gray-400 mt-1">Advertising units are designed to match the organic look and feel of our editorial cards.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                                        <span class="w-8 h-8 rounded-lg bg-brand-red text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">04</span>
+                                        <div>
+                                            <h4 class="font-bold text-white text-sm">Agile Founder-Led Execution</h4>
+                                            <p class="text-xs text-gray-400 mt-1">Direct collaboration with our founding leadership ensures rapid campaign turnaround and accountability.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Leadership Section -->
+            <div class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider mb-3">Executive Leadership</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-black tracking-tight">
+                            Meet the Founders Behind News Teen75
+                        </h2>
+                        <p class="text-gray-600 mt-2 text-base max-w-2xl">
+                            Driven by entrepreneurial vision, product excellence, and strategic media execution.
+                        </p>
+                    </div>
+                    <!-- Utility button to swap portrait assignments if desired -->
+                    <div class="flex items-center gap-2 self-start md:self-end">
+                        <button onclick="swapLeadershipPhotos()" class="px-3.5 py-2 rounded-xl bg-white hover:bg-gray-100 text-gray-700 border border-gray-300 text-xs font-semibold transition flex items-center gap-1.5 shadow-sm" title="Switch which portrait appears on each founder card">
+                            <i data-lucide="repeat" class="w-3.5 h-3.5 text-brand-red"></i>
+                            <span>Swap Founder Portraits</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Leadership Profile Cards Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+                    
+                    <!-- Leader 1: Gautam Singh (Founder & CEO) -->
+                    <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-card flex flex-col sm:flex-row group">
+                        <!-- Portrait Column -->
+                        <div class="sm:w-2/5 bg-brand-black relative min-h-[320px] sm:min-h-full overflow-hidden">
+                            <img 
+                                id="leaderImgGautam"
+                                src="Professional Olive Overshirt Portrait (1).png" 
+                                alt="Gautam Singh — Founder & CEO, News Teen75" 
+                                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                                onerror="this.style.display='none'; document.getElementById('fallbackGautam').classList.remove('hidden');"
+                            />
+                            <!-- Fallback Placeholder -->
+                            <div id="fallbackGautam" class="hidden w-full h-full min-h-[320px] bg-gradient-to-br from-brand-charcoal to-brand-black flex flex-col items-center justify-center p-6 text-center text-white">
+                                <div class="w-20 h-20 rounded-full bg-brand-red/20 border-2 border-brand-red flex items-center justify-center font-display font-extrabold text-2xl text-white mb-3">GS</div>
+                                <span class="font-bold text-sm">Gautam Singh</span>
+                                <span class="text-xs text-gray-400">Founder & CEO</span>
+                            </div>
+                            <!-- Custom Photo Upload Trigger -->
+                            <label class="absolute bottom-3 right-3 bg-black/75 hover:bg-brand-red text-white text-[11px] font-semibold px-3 py-1.5 rounded-lg cursor-pointer backdrop-blur-md border border-white/15 transition flex items-center gap-1.5">
+                                <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                                <span>Change Photo</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="uploadLeaderPhoto(event, 'leaderImgGautam', 'fallbackGautam')">
+                            </label>
+                        </div>
+
+                        <!-- Bio & Details Column -->
+                        <div class="sm:w-3/5 p-7 sm:p-8 flex flex-col justify-between">
+                            <div>
+                                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red text-white text-xs font-bold uppercase tracking-wider mb-3">
+                                    <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                                    <span>Founder & CEO</span>
+                                </div>
+                                <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-brand-black">Gautam Singh</h3>
+                                <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mt-1 mb-4">Chief Executive Officer • News Teen75</p>
+                                
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    As the Founder and CEO of <strong class="text-brand-black">News Teen75</strong>, Gautam Singh spearheads the network’s overarching corporate vision, editorial standards, and product innovation. Recognizing the shift toward rapid mobile news consumption, he architected News Teen75 to serve as a trustworthy, youth-centric digital media powerhouse.
+                                </p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    He leads strategic growth initiatives, national brand relationships, and long-term platform expansion across mobile and digital distribution channels.
+                                </p>
+                            </div>
+
+                            <div class="pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 text-[11px] font-semibold">Corporate Strategy</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 text-[11px] font-semibold">Product Vision</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 text-[11px] font-semibold">Media Growth</span>
+                                </div>
+                                <button onclick="navigateTo('contact')" class="text-xs font-bold text-brand-red hover:underline flex items-center gap-1">
+                                    <span>Connect</span>
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leader 2: Aditya Gupta (Co-Founder) -->
+                    <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-card flex flex-col sm:flex-row group">
+                        <!-- Portrait Column -->
+                        <div class="sm:w-2/5 bg-brand-black relative min-h-[320px] sm:min-h-full overflow-hidden">
+                            <img 
+                                id="leaderImgAditya"
+                                src="Monochrome Portrait Against Concrete.png" 
+                                alt="Aditya Gupta — Co-Founder, News Teen75" 
+                                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                                onerror="this.style.display='none'; document.getElementById('fallbackAditya').classList.remove('hidden');"
+                            />
+                            <!-- Fallback Placeholder -->
+                            <div id="fallbackAditya" class="hidden w-full h-full min-h-[320px] bg-gradient-to-br from-brand-charcoal to-brand-black flex flex-col items-center justify-center p-6 text-center text-white">
+                                <div class="w-20 h-20 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center font-display font-extrabold text-2xl text-white mb-3">AG</div>
+                                <span class="font-bold text-sm">Aditya Gupta</span>
+                                <span class="text-xs text-gray-400">Co-Founder</span>
+                            </div>
+                            <!-- Custom Photo Upload Trigger -->
+                            <label class="absolute bottom-3 right-3 bg-black/75 hover:bg-brand-red text-white text-[11px] font-semibold px-3 py-1.5 rounded-lg cursor-pointer backdrop-blur-md border border-white/15 transition flex items-center gap-1.5">
+                                <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                                <span>Change Photo</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="uploadLeaderPhoto(event, 'leaderImgAditya', 'fallbackAditya')">
+                            </label>
+                        </div>
+
+                        <!-- Bio & Details Column -->
+                        <div class="sm:w-3/5 p-7 sm:p-8 flex flex-col justify-between">
+                            <div>
+                                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-black text-white text-xs font-bold uppercase tracking-wider mb-3">
+                                    <i data-lucide="briefcase" class="w-3.5 h-3.5 text-brand-red"></i>
+                                    <span>Co-Founder</span>
+                                </div>
+                                <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-brand-black">Aditya Gupta</h3>
+                                <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mt-1 mb-4">Co-Founder • News Teen75</p>
+                                
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    As Co-Founder of <strong class="text-brand-black">News Teen75</strong>, Aditya Gupta drives operational excellence, commercial partnerships, and platform execution. He plays a central role in scaling the network’s advertising ecosystem and translating brand objectives into high-performing native campaigns.
+                                </p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Focusing on partner success, audience engagement workflows, and cross-platform reliability, Aditya ensures News Teen75 delivers measurable value to both readers and sponsors.
+                                </p>
+                            </div>
+
+                            <div class="pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 text-[11px] font-semibold">Operations</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 text-[11px] font-semibold">Brand Partnerships</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 text-[11px] font-semibold">Platform Scale</span>
+                                </div>
+                                <button onclick="navigateTo('contact')" class="text-xs font-bold text-brand-red hover:underline flex items-center gap-1">
+                                    <span>Connect</span>
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Leadership CTA Banner -->
+                <div class="mt-14 bg-brand-black rounded-3xl p-8 sm:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h3 class="font-display font-extrabold text-2xl">Interested in Collaborating with Our Leadership Team?</h3>
+                        <p class="text-gray-400 text-sm mt-1">Reach out directly for strategic alliances, sponsorships, media inquiries, or institutional partnerships.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 shrink-0">
+                        <button onclick="navigateTo('advertise')" class="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm transition">
+                            Explore Ad Solutions
+                        </button>
+                        <button onclick="navigateTo('contact')" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition">
+                            Contact Us Directly
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PAGE 3: ADVERTISE                          -->
+        <!-- ========================================== -->
+        <section id="page-advertise" class="page-view">
+            <!-- Subpage Header -->
+            <div class="bg-brand-black text-white py-16 sm:py-20 border-b border-white/10 bg-grid-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-8">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/20 border border-brand-red/40 text-brand-red text-xs font-bold uppercase tracking-wider mb-4">
+                                Advertising & Brand Partnerships
+                            </div>
+                            <h1 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight leading-tight">
+                                Put Your Brand at the Center of <span class="text-brand-red">What’s Trending Now.</span>
+                            </h1>
+                            <p class="text-gray-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl">
+                                Partner with News Teen75 to engage a mobile-first audience through high-visibility native story cards, vertical category sponsorships, and custom branded campaigns.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-4 flex lg:justify-end">
+                            <button onclick="openMediaKitModal()" class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white text-brand-black hover:bg-gray-100 font-display font-extrabold text-sm shadow-xl transition flex items-center justify-center gap-3">
+                                <i data-lucide="presentation" class="w-5 h-5 text-brand-red"></i>
+                                <span>Preview Interactive Ad Deck</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad Deck Overview & Partnership Formats -->
+            <div class="py-16 sm:py-20 bg-white border-b border-gray-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-14">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-red">Ad Deck Overview</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-black mt-1">
+                            High-Impact Advertising Formats
+                        </h2>
+                        <p class="text-gray-600 text-base mt-2">
+                            Every ad unit on News Teen75 is seamlessly integrated into the natural reading flow of our mobile application—ensuring 100% viewability without banner blindness.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Format 1 -->
+                        <div class="rounded-3xl border border-gray-200 p-7 sm:p-8 bg-gray-50/60 hover:bg-white hover:shadow-card transition flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <span class="px-3 py-1 rounded-full bg-brand-red text-white text-xs font-bold uppercase tracking-wider">Most Popular</span>
+                                    <span class="text-xs font-semibold text-gray-500">Placement: Home Hero & Feed</span>
+                                </div>
+                                <h3 class="font-display font-extrabold text-2xl text-brand-black mb-2">1. Native In-Feed Sponsored Cards</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Appear directly inside the <strong>“Hottest News”</strong> hero carousel or dual-card discovery grid. Styled identically to editorial cards with a clear <em>“Sponsored Partner”</em> badge, headline, visual asset, and direct CTA link.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-200 flex items-center justify-between text-xs font-semibold">
+                                <span class="text-gray-600">Ideal for: Product Launches, App Installs & Brand Awareness</span>
+                                <button onclick="selectAdFormat('Native In-Feed Sponsored Cards')" class="text-brand-red hover:underline flex items-center gap-1 shrink-0 ml-2">
+                                    <span>Select Format</span>
+                                    <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Format 2 -->
+                        <div class="rounded-3xl border border-gray-200 p-7 sm:p-8 bg-gray-50/60 hover:bg-white hover:shadow-card transition flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <span class="px-3 py-1 rounded-full bg-brand-black text-white text-xs font-bold uppercase tracking-wider">Exclusive SOV</span>
+                                    <span class="text-xs font-semibold text-gray-500">Placement: Category Pills</span>
+                                </div>
+                                <h3 class="font-display font-extrabold text-2xl text-brand-black mb-2">2. Category Tab Takeovers</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Own an entire vertical tab—<strong>India, Business, Tech, or For You</strong>. Includes exclusive “Presented By” header branding, top-of-feed pinned card placement, and 100% Share of Voice within that vertical.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-200 flex items-center justify-between text-xs font-semibold">
+                                <span class="text-gray-600">Ideal for: FinTech, EdTech, Consumer Electronics & Auto</span>
+                                <button onclick="selectAdFormat('Category Tab Takeover (India / Business / Tech)')" class="text-brand-red hover:underline flex items-center gap-1 shrink-0 ml-2">
+                                    <span>Select Format</span>
+                                    <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Format 3 -->
+                        <div class="rounded-3xl border border-gray-200 p-7 sm:p-8 bg-gray-50/60 hover:bg-white hover:shadow-card transition flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <span class="px-3 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider">Instant Reach</span>
+                                    <span class="text-xs font-semibold text-gray-500">Placement: Notification Bell & Push</span>
+                                </div>
+                                <h3 class="font-display font-extrabold text-2xl text-brand-black mb-2">3. Notification & Breaking Spotlights</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Deliver time-sensitive brand announcements, event livestreams, or flash campaigns through our in-app notification center and curated daily digest alerts.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-200 flex items-center justify-between text-xs font-semibold">
+                                <span class="text-gray-600">Ideal for: E-Commerce Sales, Admissions & Event Launches</span>
+                                <button onclick="selectAdFormat('Notification & Breaking Spotlight')" class="text-brand-red hover:underline flex items-center gap-1 shrink-0 ml-2">
+                                    <span>Select Format</span>
+                                    <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Format 4 -->
+                        <div class="rounded-3xl border border-gray-200 p-7 sm:p-8 bg-gray-50/60 hover:bg-white hover:shadow-card transition flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-5">
+                                    <span class="px-3 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider">Bespoke Studio</span>
+                                    <span class="text-xs font-semibold text-gray-500">Placement: Multi-Channel</span>
+                                </div>
+                                <h3 class="font-display font-extrabold text-2xl text-brand-black mb-2">4. Custom Branded Story Features</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Collaborate with the News Teen75 creative desk to craft custom visual explainers, founder spotlights, or campus & youth impact features tailored to your brand narrative.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-200 flex items-center justify-between text-xs font-semibold">
+                                <span class="text-gray-600">Ideal for: Corporate CSR, Universities & Enterprise Brands</span>
+                                <button onclick="selectAdFormat('Custom Branded Story Feature')" class="text-brand-red hover:underline flex items-center gap-1 shrink-0 ml-2">
+                                    <span>Select Format</span>
+                                    <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audience & Ad Deck Snapshot Metrics -->
+                    <div class="mt-12 bg-brand-black text-white rounded-3xl p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-2">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-red">Audience Snapshot</span>
+                            <h3 class="font-display font-extrabold text-2xl sm:text-3xl">Who You Reach on News Teen75</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Our readers are digitally fluent, mobile-first consumers actively tracking national affairs, career opportunities, business trends, and consumer technology.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                                <div class="text-brand-red font-display font-extrabold text-2xl sm:text-3xl">16–34</div>
+                                <div class="text-xs font-semibold text-white mt-1">Core Age Bracket</div>
+                                <div class="text-[11px] text-gray-400 mt-0.5">Gen-Z & Young Millennials</div>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                                <div class="text-white font-display font-extrabold text-2xl sm:text-3xl">4.2x</div>
+                                <div class="text-xs font-semibold text-white mt-1">Higher Ad Recall</div>
+                                <div class="text-[11px] text-gray-400 mt-0.5">Via Native Visual Story Cards</div>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-5 col-span-2 sm:col-span-1">
+                                <div class="text-brand-red font-display font-extrabold text-2xl sm:text-3xl">Pan-India</div>
+                                <div class="text-xs font-semibold text-white mt-1">Metro & Tier-1/2 Reach</div>
+                                <div class="text-[11px] text-gray-400 mt-0.5">High growth across key hubs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prospective Brand Inquiry Form -->
+            <div id="brand-inquiry-section" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    
+                    <!-- Left Info Column -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-brand-redLight text-brand-red text-xs font-bold uppercase tracking-wider">Partner Inquiry</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-brand-black tracking-tight">
+                            Launch Your Campaign with News Teen75
+                        </h2>
+                        <p class="text-gray-600 text-base leading-relaxed">
+                            Complete the partnership inquiry form to request our full rate card, custom campaign proposal, or a direct strategy call with our co-founding team.
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-brand-black text-white flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="clock" class="w-5 h-5 text-brand-red"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-brand-black">Rapid Turnaround</h4>
+                                    <p class="text-xs text-gray-600 mt-0.5">Our partnerships desk responds to all brand and agency inquiries within 24 business hours.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-brand-black text-white flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="mail" class="w-5 h-5 text-brand-red"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-brand-black">Direct Advertising Desk</h4>
+                                    <p class="text-xs text-gray-600 mt-0.5">Email: <a href="mailto:newsteen75@gmail.com" class="text-brand-red font-semibold hover:underline">newsteen75@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-brand-black text-white flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="phone-call" class="w-5 h-5 text-brand-red"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-brand-black">Executive Partnership Hotlines</h4>
+                                    <p class="text-xs text-gray-600 mt-0.5">+91 87979 61049 &bull; +91 93045 75897</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Form Card -->
+                    <div class="lg:col-span-7 bg-white rounded-3xl border border-gray-200 p-7 sm:p-10 shadow-card">
+                        <h3 class="font-display font-bold text-xl text-brand-black mb-1">Prospective Brand & Agency Inquiry Form</h3>
+                        <p class="text-xs text-gray-500 mb-6">All fields marked with * are required.</p>
+
+                        <form id="advertiseInquiryForm" onsubmit="handleAdvertiseSubmit(event)" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Brand / Company Name *</label>
+                                    <input type="text" id="adCompany" required placeholder="e.g., Acme Digital India" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm transition" />
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Contact Person Name *</label>
+                                    <input type="text" id="adContactName" required placeholder="Your Full Name" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm transition" />
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Work Email Address *</label>
+                                    <input type="email" id="adEmail" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm transition" />
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Phone / WhatsApp Number *</label>
+                                    <input type="tel" id="adPhone" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm transition" />
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Preferred Ad Format *</label>
+                                    <select id="adFormatSelect" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm bg-white transition">
+                                        <option value="Native In-Feed Sponsored Cards">Native In-Feed Sponsored Cards</option>
+                                        <option value="Category Tab Takeover (India / Business / Tech)">Category Tab Takeover (India / Business / Tech)</option>
+                                        <option value="Notification & Breaking Spotlight">Notification & Breaking Spotlight</option>
+                                        <option value="Custom Branded Story Feature">Custom Branded Story Feature</option>
+                                        <option value="Full Package / Request Rate Card">Full Package / Request Complete Rate Card</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Target Vertical / Category</label>
+                                    <select id="adVerticalSelect" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm bg-white transition">
+                                        <option value="All Categories (Run of Network)">All Categories (Run of Network)</option>
+                                        <option value="For You (Main Discovery Feed)">For You (Main Discovery Feed)</option>
+                                        <option value="India (National & Trending)">India (National & Trending)</option>
+                                        <option value="Business & Startups">Business & Startups</option>
+                                        <option value="Tech & Gadgets">Tech & Gadgets</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Campaign Objectives & Timeline *</label>
+                                <textarea id="adGoals" rows="4" required placeholder="Tell us about your brand campaign goals, target dates, or specific deliverables you are looking for..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm transition"></textarea>
+                            </div>
+
+                            <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <button type="submit" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm shadow-crimson transition flex items-center justify-center gap-2">
+                                    <i data-lucide="send" class="w-4 h-4"></i>
+                                    <span>Submit Partnership Inquiry</span>
+                                </button>
+                                <span class="text-xs text-gray-500">Or email directly: <strong class="text-brand-black">newsteen75@gmail.com</strong></span>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PAGE 4: CONTACT                            -->
+        <!-- ========================================== -->
+        <section id="page-contact" class="page-view">
+            <!-- Subpage Header -->
+            <div class="bg-brand-black text-white py-16 sm:py-20 border-b border-white/10 bg-grid-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-3xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/20 border border-brand-red/40 text-brand-red text-xs font-bold uppercase tracking-wider mb-4">
+                            Corporate Contact
+                        </div>
+                        <h1 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight leading-tight">
+                            Get in Touch with the <span class="text-brand-red">News Teen75</span> Team.
+                        </h1>
+                        <p class="text-gray-300 text-base sm:text-lg mt-4 leading-relaxed">
+                            Whether you’re a brand exploring advertising partnerships, a media organization, or seeking executive communication with our founders, reach us directly below.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Contact Cards & Quick Message Form -->
+            <div class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Top 3 Direct Contact Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+                    <!-- Email Card -->
+                    <div class="bg-white rounded-3xl p-7 border border-gray-200 shadow-card flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-redLight text-brand-red flex items-center justify-center mb-5">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Official Email Desk</span>
+                            <h3 class="font-display font-extrabold text-xl text-brand-black mt-1 break-all">newsteen75@gmail.com</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">
+                                For advertising decks, official press communication, and corporate inquiries.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-gray-100 flex items-center gap-2">
+                            <a href="mailto:newsteen75@gmail.com" class="flex-1 py-2.5 px-3 rounded-xl bg-brand-red text-white font-bold text-xs text-center hover:bg-brand-redDark transition">
+                                Send Email
+                            </a>
+                            <button onclick="copyToClipboard('newsteen75@gmail.com', 'Email address copied!')" class="py-2.5 px-3 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold text-xs transition flex items-center gap-1">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Primary Phone Card -->
+                    <div class="bg-white rounded-3xl p-7 border border-gray-200 shadow-card flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-redLight text-brand-red flex items-center justify-center mb-5">
+                                <i data-lucide="phone-call" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Primary Direct Line</span>
+                            <h3 class="font-display font-extrabold text-xl text-brand-black mt-1">+91 87979 61049</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">
+                                Direct executive & partnership line. Available Monday – Saturday during standard business hours.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-gray-100 flex items-center gap-2">
+                            <a href="tel:+918797961049" class="flex-1 py-2.5 px-3 rounded-xl bg-brand-black text-white font-bold text-xs text-center hover:bg-gray-800 transition">
+                                Call Now
+                            </a>
+                            <button onclick="copyToClipboard('+91 87979 61049', 'Phone number +91 87979 61049 copied!')" class="py-2.5 px-3 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold text-xs transition flex items-center gap-1">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Phone Card -->
+                    <div class="bg-white rounded-3xl p-7 border border-gray-200 shadow-card flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-redLight text-brand-red flex items-center justify-center mb-5">
+                                <i data-lucide="smartphone" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Alternate Direct Line</span>
+                            <h3 class="font-display font-extrabold text-xl text-brand-black mt-1">+91 93045 75897</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">
+                                Secondary corporate contact & WhatsApp support desk for advertising and operations.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-gray-100 flex items-center gap-2">
+                            <a href="tel:+919304575897" class="flex-1 py-2.5 px-3 rounded-xl bg-brand-black text-white font-bold text-xs text-center hover:bg-gray-800 transition">
+                                Call Now
+                            </a>
+                            <button onclick="copyToClipboard('+91 93045 75897', 'Phone number +91 93045 75897 copied!')" class="py-2.5 px-3 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold text-xs transition flex items-center gap-1">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Message Form & Corporate Summary -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                    <!-- Quick Message Form -->
+                    <div class="lg:col-span-7 bg-white rounded-3xl border border-gray-200 p-7 sm:p-10 shadow-card">
+                        <div class="mb-6">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-red">Quick Message</span>
+                            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-brand-black mt-1">Send Us a Direct Message</h2>
+                            <p class="text-gray-500 text-xs mt-1">Fill out the form below and our team will get back to you promptly.</p>
+                        </div>
+
+                        <form id="quickContactForm" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Your Name *</label>
+                                    <input type="text" id="contactName" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm transition" />
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Email or Phone *</label>
+                                    <input type="text" id="contactInfo" required placeholder="Email address or mobile number" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm transition" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Inquiry Department *</label>
+                                <select id="contactDept" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm bg-white transition">
+                                    <option value="Advertising & Brand Partnerships">Advertising & Brand Partnerships</option>
+                                    <option value="Executive Leadership (Founder / Co-Founder)">Executive Leadership (Gautam Singh / Aditya Gupta)</option>
+                                    <option value="Media & Press Relations">Media & Press Relations</option>
+                                    <option value="General Corporate Inquiry">General Corporate Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Your Message *</label>
+                                <textarea id="contactMessage" rows="4" required placeholder="How can the News Teen75 team assist you?" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none text-sm transition"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-redDark text-white font-bold text-sm shadow-crimson transition flex items-center justify-center gap-2">
+                                <i data-lucide="message-square" class="w-4 h-4"></i>
+                                <span>Send Quick Message</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Corporate Summary & Leadership Directory -->
+                    <div class="lg:col-span-5 bg-brand-black text-white rounded-3xl p-7 sm:p-9 border border-white/10 space-y-6">
+                        <div>
+                            <div class="font-display font-extrabold text-2xl">
+                                <span>News</span><span class="text-brand-red">Teen75</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">Corporate Communications & Leadership Directory</p>
+                        </div>
+
+                        <div class="space-y-4 border-t border-white/10 pt-5 text-sm">
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Founder & CEO</span>
+                                <span class="font-bold text-white text-base">Gautam Singh</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Co-Founder</span>
+                                <span class="font-bold text-white text-base">Aditya Gupta</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Official Email</span>
+                                <a href="mailto:newsteen75@gmail.com" class="font-bold text-brand-red hover:underline">newsteen75@gmail.com</a>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Direct Phone Lines</span>
+                                <div class="font-bold text-white mt-0.5">+91 87979 61049</div>
+                                <div class="font-bold text-white">+91 93045 75897</div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs text-gray-300 leading-relaxed">
+                            <strong class="text-white block mb-1">Looking for Advertising Specs?</strong>
+                            Visit our <button onclick="navigateTo('advertise')" class="text-brand-red font-semibold underline">Advertise page</button> or open the interactive <button onclick="openMediaKitModal()" class="text-brand-red font-semibold underline">Ad Deck Overview</button> for placement details.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- INTERACTIVE AD DECK MODAL                  -->
+    <!-- ========================================== -->
+    <div id="mediaKitModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-gray-200 animate-[fadeInPage_0.25s_ease-out]">
+            <div class="bg-brand-black text-white px-6 py-5 flex items-center justify-between border-b border-white/10">
+                <div class="flex items-center gap-2.5">
+                    <span class="font-display font-extrabold text-xl"><span>News</span><span class="text-brand-red">Teen75</span></span>
+                    <span class="text-xs px-2.5 py-0.5 rounded-full bg-brand-red text-white font-bold uppercase">2026 Ad Deck Summary</span>
+                </div>
+                <button onclick="closeMediaKitModal()" class="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6 max-h-[80vh] overflow-y-auto">
+                <div>
+                    <h3 class="font-display font-extrabold text-2xl text-brand-black">Brand Partnership & Inventory Specifications</h3>
+                    <p class="text-sm text-gray-600 mt-1">Overview of standard ad placements across the News Teen75 mobile ecosystem.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                        <span class="text-[11px] font-bold uppercase text-brand-red">Slot A • High Impact</span>
+                        <h4 class="font-bold text-brand-black text-base mt-0.5">Hero Carousel Spotlight</h4>
+                        <p class="text-xs text-gray-600 mt-1">16:9 or 4:3 visual card with category pill badge, bold 2-line headline, and direct landing page tap-through.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                        <span class="text-[11px] font-bold uppercase text-brand-red">Slot B • Discovery Grid</span>
+                        <h4 class="font-bold text-brand-black text-base mt-0.5">Dual-Card Native Tile</h4>
+                        <p class="text-xs text-gray-600 mt-1">Positioned directly below the hero story inside the 2-column trending news grid for organic engagement.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                        <span class="text-[11px] font-bold uppercase text-brand-red">Slot C • Vertical Ownership</span>
+                        <h4 class="font-bold text-brand-black text-base mt-0.5">Category Pill Sponsorship</h4>
+                        <p class="text-xs text-gray-600 mt-1">Exclusive brand integration inside the <em>For You</em>, <em>India</em>, <em>Business</em>, or <em>Tech</em> feed tabs.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                        <span class="text-[11px] font-bold uppercase text-brand-red">Slot D • Custom Content</span>
+                        <h4 class="font-bold text-brand-black text-base mt-0.5">Branded Editorial Feature</h4>
+                        <p class="text-xs text-gray-600 mt-1">Dedicated story article crafted in collaboration with our editorial team to highlight your brand story.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-redLight border border-brand-red/20 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                        <div class="font-bold text-sm text-brand-black">Ready to request custom pricing & dates?</div>
+                        <div class="text-xs text-gray-600">Contact Gautam Singh & Aditya Gupta’s partnerships desk directly.</div>
+                    </div>
+                    <button onclick="closeMediaKitModal(); navigateTo('advertise'); setTimeout(() => document.getElementById('brand-inquiry-section').scrollIntoView({behavior:'smooth'}), 150);" class="px-5 py-2.5 rounded-xl bg-brand-red text-white font-bold text-xs shrink-0 hover:bg-brand-redDark transition">
+                        Open Inquiry Form
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- NOTIFICATION TOAST                         -->
+    <!-- ========================================== -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden max-w-md bg-brand-black text-white border border-white/15 rounded-2xl p-4 shadow-2xl flex items-start gap-3">
+        <div class="w-8 h-8 rounded-xl bg-brand-red text-white flex items-center justify-center shrink-0 mt-0.5">
+            <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+        </div>
+        <div class="text-xs leading-relaxed">
+            <div id="toastTitle" class="font-bold text-sm text-white">Success</div>
+            <div id="toastBody" class="text-gray-300 mt-0.5">Your request has been processed.</div>
+        </div>
+        <button onclick="hideToast()" class="text-gray-400 hover:text-white ml-2">
+            <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- CONSISTENT CORPORATE FOOTER                -->
+    <!-- ========================================== -->
+    <footer class="bg-brand-black text-gray-400 border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                
+                <!-- Col 1: Brand Identity -->
+                <div class="lg:col-span-4 space-y-4">
+                    <button onclick="navigateTo('home')" class="flex items-center focus:outline-none">
+                        <span class="font-display font-extrabold text-2xl text-white">News</span><span class="font-display font-extrabold text-2xl text-brand-red">Teen75</span>
+                    </button>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-sm">
+                        News Teen75 is a next-generation mobile news network delivering curated updates across India, Business, Tech, and Trending stories—connecting forward-thinking brands with India’s digital generation.
+                    </p>
+                    <div class="pt-1 text-xs text-gray-500">
+                        Leadership: <span class="text-gray-300 font-medium">Gautam Singh</span> (Founder & CEO) &bull; <span class="text-gray-300 font-medium">Aditya Gupta</span> (Co-Founder)
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Navigation -->
+                <div class="lg:col-span-2 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white">Navigation</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><button onclick="navigateTo('home')" class="hover:text-brand-red transition">Home</button></li>
+                        <li><button onclick="navigateTo('about')" class="hover:text-brand-red transition">About & Leadership</button></li>
+                        <li><button onclick="navigateTo('advertise')" class="hover:text-brand-red transition">Advertise With Us</button></li>
+                        <li><button onclick="navigateTo('contact')" class="hover:text-brand-red transition">Contact Corporate Desk</button></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Advertising Solutions -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white">Advertising Solutions</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><button onclick="navigateTo('advertise')" class="hover:text-brand-red transition">Native In-Feed Story Cards</button></li>
+                        <li><button onclick="navigateTo('advertise')" class="hover:text-brand-red transition">Category Tab Takeovers</button></li>
+                        <li><button onclick="navigateTo('advertise')" class="hover:text-brand-red transition">Breaking & Push Spotlights</button></li>
+                        <li><button onclick="openMediaKitModal()" class="hover:text-brand-red transition flex items-center gap-1.5 text-brand-red font-semibold">
+                            <span>Interactive Ad Deck</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </button></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Direct Contact Details -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white">Direct Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2.5">
+                            <i data-lucide="mail" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                            <a href="mailto:newsteen75@gmail.com" class="text-gray-200 hover:text-white break-all">newsteen75@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i data-lucide="phone" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                            <div>
+                                <a href="tel:+918797961049" class="block text-gray-200 hover:text-white">+91 87979 61049</a>
+                                <a href="tel:+919304575897" class="block text-gray-200 hover:text-white mt-0.5">+91 93045 75897</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <div>
+                    &copy; 2026 <strong class="text-white">News Teen75</strong>. All rights reserved. Corporate Brand & Advertising Portal.
+                </div>
+                <div class="flex items-center gap-6">
+                    <button onclick="navigateTo('about')" class="hover:text-gray-300 transition">Leadership</button>
+                    <button onclick="navigateTo('advertise')" class="hover:text-gray-300 transition">Brand Safety</button>
+                    <button onclick="navigateTo('contact')" class="hover:text-gray-300 transition">Press & Inquiries</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- CLIENT-SIDE ROUTING & INTERACTION SCRIPTS  -->
+    <!-- ========================================== -->
+    <script>
+        // Initialize Lucide icons on load
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // Multi-Page Navigation Controller
+        function navigateTo(pageId) {
+            const pages = ['home', 'about', 'advertise', 'contact'];
+            if (!pages.includes(pageId)) pageId = 'home';
+
+            // Hide all pages & activate selected page
+            document.querySelectorAll('.page-view').forEach(section => {
+                section.classList.remove('active');
+            });
+            const targetSection = document.getElementById(`page-${pageId}`);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Update Desktop Nav Active State
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.getAttribute('data-page') === pageId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Update Mobile Nav Active State
+            document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+                if (btn.getAttribute('data-mobile-page') === pageId) {
+                    btn.classList.add('bg-white/10', 'text-white', 'font-semibold');
+                    btn.classList.remove('text-gray-300', 'font-medium');
+                } else {
+                    btn.classList.remove('bg-white/10', 'text-white', 'font-semibold');
+                    btn.classList.add('text-gray-300', 'font-medium');
+                }
+            });
+
+            // Scroll smoothly to top of page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu(forceState) {
+            const drawer = document.getElementById('mobileMenuDrawer');
+            const isHidden = drawer.classList.contains('hidden');
+            const shouldOpen = typeof forceState === 'boolean' ? forceState : isHidden;
+
+            if (shouldOpen) {
+                drawer.classList.remove('hidden');
+            } else {
+                drawer.classList.add('hidden');
+            }
+        }
+
+        // Pre-select Ad Format & Scroll to Inquiry Form
+        function selectAdFormat(formatName) {
+            const selectEl = document.getElementById('adFormatSelect');
+            if (selectEl) {
+                selectEl.value = formatName;
+            }
+            const formSection = document.getElementById('brand-inquiry-section');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            showToast('Format Selected', `"${formatName}" has been selected in the inquiry form below.`);
+        }
+
+        // Handle Advertise Inquiry Form Submission
+        function handleAdvertiseSubmit(event) {
+            event.preventDefault();
+            const company = document.getElementById('adCompany').value.trim();
+            const name = document.getElementById('adContactName').value.trim();
+            const email = document.getElementById('adEmail').value.trim();
+            const phone = document.getElementById('adPhone').value.trim();
+            const format = document.getElementById('adFormatSelect').value;
+            const vertical = document.getElementById('adVerticalSelect').value;
+            const goals = document.getElementById('adGoals').value.trim();
+
+            const subject = encodeURIComponent(`[Ad Partnership Inquiry] ${company} — News Teen75`);
+            const body = encodeURIComponent(
+                `Hello News Teen75 Partnerships Team,\n\n` +
+                `We would like to inquire about advertising on News Teen75.\n\n` +
+                `• Company / Brand: ${company}\n` +
+                `• Contact Person: ${name}\n` +
+                `• Work Email: ${email}\n` +
+                `• Phone / WhatsApp: ${phone}\n` +
+                `• Preferred Format: ${format}\n` +
+                `• Target Vertical: ${vertical}\n\n` +
+                `Campaign Details:\n${goals}\n\n` +
+                `Best regards,\n${name}`
+            );
+
+            showToast(
+                'Partnership Inquiry Logged!',
+                `Thank you, ${name}. Your inquiry for ${company} is ready. Opening your email client to dispatch to newsteen75@gmail.com.`
+            );
+
+            setTimeout(() => {
+                window.location.href = `mailto:newsteen75@gmail.com?subject=${subject}&body=${body}`;
+            }, 900);
+
+            event.target.reset();
+        }
+
+        // Handle Quick Contact Form Submission
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contactName').value.trim();
+            const info = document.getElementById('contactInfo').value.trim();
+            const dept = document.getElementById('contactDept').value;
+            const message = document.getElementById('contactMessage').value.trim();
+
+            const subject = encodeURIComponent(`[${dept}] Message from ${name} — News Teen75`);
+            const body = encodeURIComponent(
+                `Name: ${name}\n` +
+                `Contact Info: ${info}\n` +
+                `Department: ${dept}\n\n` +
+                `Message:\n${message}`
+            );
+
+            showToast(
+                'Message Prepared!',
+                `Thank you, ${name}. Opening your default mail client to send your message to newsteen75@gmail.com.`
+            );
+
+            setTimeout(() => {
+                window.location.href = `mailto:newsteen75@gmail.com?subject=${subject}&body=${body}`;
+            }, 900);
+
+            event.target.reset();
+        }
+
+        // Swap Founder Portraits Utility (in case user wants to switch the two uploaded portraits)
+        function swapLeadershipPhotos() {
+            const imgGautam = document.getElementById('leaderImgGautam');
+            const imgAditya = document.getElementById('leaderImgAditya');
+            if (imgGautam && imgAditya) {
+                const tempSrc = imgGautam.getAttribute('src');
+                imgGautam.setAttribute('src', imgAditya.getAttribute('src'));
+                imgAditya.setAttribute('src', tempSrc);
+                imgGautam.style.display = 'block';
+                imgAditya.style.display = 'block';
+                document.getElementById('fallbackGautam').classList.add('hidden');
+                document.getElementById('fallbackAditya').classList.add('hidden');
+                showToast('Portraits Swapped', 'Founder profile portraits have been swapped between the two cards.');
+            }
+        }
+
+        // Custom Photo Upload Handler for Founder Cards
+        function uploadLeaderPhoto(event, imgId, fallbackId) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imgEl = document.getElementById(imgId);
+                const fallbackEl = document.getElementById(fallbackId);
+                if (imgEl) {
+                    imgEl.src = e.target.result;
+                    imgEl.style.display = 'block';
+                }
+                if (fallbackEl) {
+                    fallbackEl.classList.add('hidden');
+                }
+                showToast('Portrait Updated', 'Leadership profile photo has been updated.');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Interactive Ad Deck Modal Controls
+        function openMediaKitModal() {
+            document.getElementById('mediaKitModal').classList.remove('hidden');
+        }
+        function closeMediaKitModal() {
+            document.getElementById('mediaKitModal').classList.add('hidden');
+        }
+
+        // Clipboard Copy Helper (iFrame compatible)
+        function copyToClipboard(text, message) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('Copied to Clipboard', message);
+        }
+
+        // Toast Helper
+        let toastTimer = null;
+        function showToast(title, body) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastBody').textContent = body;
+            toast.classList.remove('hidden');
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                hideToast();
+            }, 4500);
+        }
+        function hideToast() {
+            document.getElementById('toastNotification').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
